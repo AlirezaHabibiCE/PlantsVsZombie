@@ -1,9 +1,10 @@
 #include "Shooterboard.h"
 
-ShooterBoard::ShooterBoard(QGraphicsItem *parent) : QObject(), PlantBoard (100, false, false, parent)
+ShooterBoard::ShooterBoard(QGraphicsItem *parent) :
+    QObject(), PlantBoard (100, false, false, parent)
 {
     setPixmap(QPixmap(":/images/shooterUnSelected.jpg"));
-    setPos(30,10);
+    setPos(95,8);
 }
 
 void ShooterBoard::slotPlayerScore(int playerScore)
@@ -21,7 +22,7 @@ void ShooterBoard::slotPlayerScore(int playerScore)
 void ShooterBoard::isPlaced()
 {
     isSelected = false;
-    setPixmap(QPixmap(":/images/shooterSelectable.jpg"));
+    emit UnselectShooter();
 }
 
 void ShooterBoard::mousePressEvent(QGraphicsSceneMouseEvent *event)

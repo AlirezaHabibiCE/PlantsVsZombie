@@ -33,7 +33,8 @@ SOURCES += \
     OakBoard.cpp \
     CherryBoard.cpp \
     Plantboard.cpp \
-    Cherry.cpp
+    Cherry.cpp \
+    Sshovel.cpp
 
 HEADERS += \
     Bullet.h \
@@ -52,7 +53,8 @@ HEADERS += \
     OakBoard.h \
     CherryBoard.h \
     Plantboard.h \
-    Cherry.h
+    Cherry.h \
+    Shovel.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

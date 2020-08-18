@@ -37,17 +37,37 @@ Controller::Controller(QObject *parent, int level)
 
     //set boards
     shooterBoard = new ShooterBoard(holder);
+    scene->addItem(shooterBoard);
+
     sunflowerBoard = new SunflowerBoard(holder);
+    scene->addItem(sunflowerBoard);
+
     oakboard = new OakBoard(holder);
+
+    if ( level >= 2)
+    {
+        scene->addItem(oakboard);
+    }
+
     cherryBoard = new CherryBoard(holder);
+    if (level >= 3)
+    {
+        scene->addItem(cherryBoard);
+    }
+
+
 
     for (int i{0}; i < level ; ++i){
         for(int j{0}; j < 8 ; ++j){
             controllerBlocks.push_back( new Block(holder, controllerScore));
 
-            //fixing size of block
-            controllerBlocks.last()->setRect( 34 + ( j*84 ) , 382 - ( i*108 ) ,
-                                                34 + ( j*84 ) + 83 ,  382 - ( i*108 ) +107 );
+            //setting size of block
+            controllerBlocks.last()->setRect( 0, 0 , 80 , 107 );
+            controllerBlocks.last()->setPos(34 + ( j*80 ), 382 - ( i*108 ));
+
+            QPen pen{"green"};
+            pen.setStyle(Qt::NoPen);
+            controllerBlocks.last()->setPen(pen);
 
             //add to scene
             scene->addItem(controllerBlocks.last());
@@ -74,13 +94,13 @@ Controller::Controller(QObject *parent, int level)
                                       controllerBlocks.last() , SLOT(ShooterSellected()));
 
             connect(sunflowerBoard , SIGNAL(sunflowerSellected()),
-                                      controllerBlocks.last() , SLOT(ShooterSellected()));
+                                      controllerBlocks.last() , SLOT(SunFlowerSellected()));
 
             connect(oakboard , SIGNAL(OakSellected()),
-                                      controllerBlocks.last() , SLOT(ShooterSellected()));
+                                      controllerBlocks.last() , SLOT(OakSellected()));
 
             connect(cherryBoard , SIGNAL(CherrySelected()),
-                                      controllerBlocks.last() , SLOT(ShooterSellected()));
+                                      controllerBlocks.last() , SLOT(CherrySellected()));
 
             //Unselect signal
             connect(shooterBoard , SIGNAL(UnselectShooter()),
@@ -108,6 +128,13 @@ Controller::Controller(QObject *parent, int level)
             connect(controllerScore , SIGNAL(signalChangeAmount(int )),
                                       cherryBoard , SLOT(slotPlayerScore(int )));
 
+            //change flag to false in blocks
+            connect(shooterBoard , SIGNAL(isPlaced()),
+                                      controllerBlocks.last() , SLOT(UnSelect()));
+
+            connect(sunflowerBoard , SIGNAL(isPlaced()),
+                                      controllerBlocks.last() , SLOT(UnSelect()));
+
         }
     }
 
@@ -129,7 +156,8 @@ void Controller::addZombie(const int& velocity , const int& lives) {
     zombieList.push_back(new Zombie(velocity , cTimer , lives ,holder));
     // add to the scene
     scene->addItem(zombieList.last());
-    zombieList.last()->setPos(800,390);
+
+    zombieList.last()->setPos(800 ,390 - 100*(rand()%level) );
 }
 
 //void Controller::addMasterZombie(const int &velocity, const int &lives)
@@ -143,6 +171,11 @@ void Controller::addZombie(const int& velocity , const int& lives) {
 void Controller::addSun() {
     sunList.push_back(new Sun(scene , controllerScore , holder , cTimer));
     sunList.last()->setPos( rand() % 800 , 0);
+}
+
+int Controller::getRound()
+{
+    return level;
 }
 
 // test

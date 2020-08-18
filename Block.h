@@ -34,10 +34,10 @@ signals:
     void signalIsPlacedToScore(int price);//for score
 
 public slots:
-    Shooter* ShooterSellected();
-    SunFlower* SunFlowerSellected();
-    Oak* OakSellected();
-    Cherry* CherrySellected();
+    void ShooterSellected();
+    void SunFlowerSellected();
+    void OakSellected();
+    void CherrySellected();
     void UnSelect();
 };
 

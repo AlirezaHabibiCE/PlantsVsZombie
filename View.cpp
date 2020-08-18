@@ -40,9 +40,25 @@ View::~View() {
 
 void View::schedule(){
    ++seconds;
-
-    if(seconds == 10 || seconds == 15){
-        viewController->addZombie(5 , 10);
+    if (viewController->getRound() == 1)
+    {
+        if(seconds == 10 || seconds == 15){
+            viewController->addZombie(5 , 10);
+        }
+    }
+     else if (viewController->getRound() == 2)
+    {
+        if(seconds == 45 || seconds == 48 ||seconds == 50 ||seconds == 51
+                ||seconds == 54 ||seconds == 52 ||seconds == 60
+                ||seconds == 58||seconds == 62 ||seconds == 61){
+            viewController->addZombie(5 , 10);
+        }
+    }
+     else if (viewController->getRound() == 3)
+    {
+        if(seconds == 50 || seconds == 54){
+            viewController->addZombie(5 , 10);
+        }
     }
 
     if(seconds % 2 == 0){

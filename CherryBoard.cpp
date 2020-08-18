@@ -3,7 +3,7 @@
 CherryBoard::CherryBoard(QGraphicsItem* parent) : QObject(), PlantBoard (150, false, false, parent)
 {
     setPixmap(QPixmap(":/images/cherryUnSelected.jpg"));
-    setPos(105,10);
+    setPos(215,8);
 }
 
 void CherryBoard::slotPlayerScore(int playerScore)
@@ -25,7 +25,7 @@ void CherryBoard::mousePressEvent(QGraphicsSceneMouseEvent *event)
         
        emit CherrySelected();
     }
-    else if ( isSelected ){
+    else if ( isSelected && !(isSelected)){
         isSelected = false;
         setPixmap(QPixmap(":/images/cherrySelectable.jpg"));
         emit UnSelectCherry();

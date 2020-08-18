@@ -6,6 +6,10 @@ Block::Block(QGraphicsItem* parent, Score* blockScore):
 {
     plant = nullptr;//at first this is null
 
+    //start timer
+    bTimer = new QTimer();
+    bTimer->start(50);
+
     //initialize all plants flags
     sunflower = false;
     shooter = false;
@@ -21,19 +25,19 @@ void Block::mousePressEvent(QGraphicsSceneMouseEvent *event)
         if (shooter){
             plant = new Shooter(bTimer, parentItem());
             scene()->addItem(plant);
-            plant->setPos(x()+10 , y()+10);
+            plant->setPos(x() , y());
             emit signalIsPlacedToScore(100);
             emit signalIsPlacedToBoard();
         }
-        if (sunflower){
+        else if (sunflower){
             plant = new SunFlower(bTimer, blockScore, parentItem());
             scene()->addItem(plant);
-            plant->setPos(x()+10 , y()+10);
+            plant->setPos( x() , y());
             emit signalIsPlacedToScore(50);
             emit signalIsPlacedToBoard();
-
         }
-        if (cherry){
+
+        else if (cherry){
 //            plant = new Cherry(bTimer, parentItem());
 //            scene()->addItem(plant);
 //            plant->setPos(x()+10 , y()+10);
@@ -41,7 +45,8 @@ void Block::mousePressEvent(QGraphicsSceneMouseEvent *event)
             emit signalIsPlacedToBoard();
 
         }
-        if (oak){
+
+        else if (oak){
 //            plant = new Shooter(bTimer, parentItem());
 //            scene()->addItem(plant);
 //            plant->setPos(x()+10 , y()+10);
@@ -52,7 +57,7 @@ void Block::mousePressEvent(QGraphicsSceneMouseEvent *event)
     }
 }
 
-Shooter *Block::ShooterSellected()
+void Block::ShooterSellected()
 {
     if (!(shooter||sunflower||cherry||oak))
     {
@@ -60,7 +65,7 @@ Shooter *Block::ShooterSellected()
     }
 }
 
-SunFlower *Block::SunFlowerSellected()
+void Block::SunFlowerSellected()
 {
     if (!(shooter||sunflower||cherry||oak))
     {
@@ -68,7 +73,7 @@ SunFlower *Block::SunFlowerSellected()
     }
 }
 
-Oak *Block::OakSellected()
+void Block::OakSellected()
 {
     if (!(shooter||sunflower||cherry||oak))
     {
@@ -76,7 +81,7 @@ Oak *Block::OakSellected()
     }
 }
 
-Cherry* Block::CherrySellected()
+void Block::CherrySellected()
 {
     if (!(shooter||sunflower||cherry||oak))
     {

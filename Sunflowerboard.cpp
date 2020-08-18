@@ -3,7 +3,7 @@
 SunflowerBoard::SunflowerBoard(QGraphicsItem* parent) : QObject(), PlantBoard (50, false, false, parent)
 {
     setPixmap(QPixmap(":/images/sunflowerUnSelected.jpg"));
-    setPos(60,10);
+    setPos(155,8);
 }
 
 void SunflowerBoard::slotPlayerScore(int playerScore)
@@ -21,13 +21,13 @@ void SunflowerBoard::slotPlayerScore(int playerScore)
 void SunflowerBoard::isPlaced()
 {
     isSelected = false;
-    setPixmap(QPixmap(":/images/sunflowerSelectable.jpg"));
+    emit UnselectSunflower();
 }
 
 void SunflowerBoard::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     //first we check that plant is selectable
-    if(isSelectable){
+    if(isSelectable && !(isSelected)){
        isSelected = true;
 
        //set selected picture

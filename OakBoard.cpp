@@ -3,7 +3,7 @@
 OakBoard::OakBoard(QGraphicsItem* parent) : QObject(), PlantBoard (150, false, false, parent)
 {
     setPixmap(QPixmap(":/images/OakUnSelected.jpg"));
-    setPos(80,10);
+    setPos(275,8);
 }
 
 void OakBoard::slotPlayerScore(int playerScore)
@@ -24,7 +24,7 @@ void OakBoard::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
        emit OakSellected();
     }
-    else if ( isSelected ){
+    else if ( isSelected && !(isSelected)){
         isSelected = false;
         setPixmap(QPixmap(":/images/OakSelectable.jpg"));
         emit UnselectOak();

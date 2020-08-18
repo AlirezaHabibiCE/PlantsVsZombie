@@ -32,6 +32,7 @@ void Score::addToScore(int s)
 void Score::isPlaced(int price)
 {
     playerScore -= price;
+    setPlainText(QString::number(playerScore));
     emit signalChangeAmount(playerScore);
 }
 

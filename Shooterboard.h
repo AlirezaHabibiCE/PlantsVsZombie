@@ -14,7 +14,7 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent * event);
 
 signals:
-    Shooter* ShooterSellected();
+    void ShooterSellected();
     void UnselectShooter();
 public slots:
     void slotPlayerScore(int playerScore);

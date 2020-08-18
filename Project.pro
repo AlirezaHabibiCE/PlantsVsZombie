@@ -18,7 +18,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     Bullet.cpp \
     Controller.cpp \
-    MasterZombie.cpp \
     Oak.cpp \
     Plant.cpp \
     Score.cpp \
@@ -28,12 +27,17 @@ SOURCES += \
     View.cpp \
     Zombie.cpp \
     main.cpp \
-    Block.cpp
+    Block.cpp \
+    Shooterboard.cpp \
+    Sunflowerboard.cpp \
+    OakBoard.cpp \
+    CherryBoard.cpp \
+    Plantboard.cpp \
+    Cherry.cpp
 
 HEADERS += \
     Bullet.h \
     Controller.h \
-    MasterZombie.h \
     Oak.h \
     Plant.h \
     Score.h \
@@ -42,7 +46,13 @@ HEADERS += \
     SunFlower.h \
     View.h \
     Zombie.h \
-    Block.h
+    Block.h \
+    Shooterboard.h \
+    Sunflowerboard.h \
+    OakBoard.h \
+    CherryBoard.h \
+    Plantboard.h \
+    Cherry.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

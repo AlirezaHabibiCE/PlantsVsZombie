@@ -11,17 +11,18 @@
         <file>ball-shadow.png</file>
         <file>shooter1.png</file>
         <file>sunflower.png</file>
-        <file>oak1.png</file>
-        <file>oak2.png</file>
-        <file>oak3.png</file>
-        <file>oak4.png</file>
-        <file>oak5.png</file>
-        <file>oak6.png</file>
-        <file>oak7.png</file>
-        <file>mZombie1.png</file>
-        <file>mZombie2.png</file>
-        <file>mZombie3.png</file>
-        <file>mZombie4.png</file>
+        <file>cherrySelectable.jpg</file>
+        <file>cherrySelected.jpg</file>
+        <file>cherryUnSelected.jpg</file>
+        <file>OakSelectable.jpg</file>
+        <file>OakUnSelected.jpg</file>
+        <file>OakSelected.jpg</file>
+        <file>shooterSelectable.jpg</file>
+        <file>shooterUnSelected.jpg</file>
+        <file>shooterSelected.jpg</file>
+        <file>sunflowerSelectable.jpg</file>
+        <file>sunflowerUnSelected.jpg</file>
+        <file>sunflowerSelected.jpg</file>
     </qresource>
     <qresource prefix="/musics">
         <file>throwBullet.mp3</file>
@@ -30,8 +31,5 @@
         <file>groan.mp3</file>
         <file>MainMenuPvZ1.mp3</file>
         <file>chomp.mp3</file>
-        <file>bulletZombie.mp3</file>
-        <file>killZombie.mp3</file>
-        <file>groan6.mp3</file>
     </qresource>
 </RCC>

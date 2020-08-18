@@ -1,0 +1,28 @@
+#include "CherryBoard.h"
+
+CherryBoard::CherryBoard(QGraphicsItem* parent) : QObject(), PlantBoard (100, false, false, parent)
+{
+    setPixmap(QPixmap(":/images/cherryUnSelected.jpg"));
+    setPos(105,10);
+}
+
+void CherryBoard::slotPlayerScore(int playerScore)
+{
+    if (price <= playerScore){
+        isSelectable = true;
+        setPixmap(QPixmap(":/images/cherrySelectable.jpg"));
+    }
+}
+
+void CherryBoard::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    //first we check that plant is selectable
+    if(isSelectable){
+       isSelected = true;
+
+       //set selected picture
+       setPixmap(QPixmap(":/images/cherrySelected.jpg"));
+        
+       emit CherrySelected();
+    }
+}

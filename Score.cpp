@@ -1,7 +1,6 @@
 #include "Score.h"
 #include <QFont>
 
-
 Score::Score(QGraphicsItem * parent)
         : QGraphicsTextItem(parent) , playerScore(0)
 {
@@ -25,5 +24,8 @@ void Score::addToScore(int s)
 {
     playerScore += s;
     setPlainText(QString::number(playerScore));
+
+    //send player score to plantBoard
+    emit signalChangeAmount(playerScore);
 }
 

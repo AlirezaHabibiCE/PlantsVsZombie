@@ -8,18 +8,16 @@
 #include "Zombie.h"
 #include "Score.h"
 #include "Sun.h"
-#include "MasterZombie.h"
 
 class Controller : public QObject
 {
     Q_OBJECT
-    friend class View;
+    friend class View;friend class Block;
 private:
     QGraphicsScene * scene;
     QTimer * cTimer;
     QGraphicsRectItem * holder;
     QList<Zombie *> zombieList;
-    QList<MasterZombie*> masterZombieList;
     QList<Sun *> sunList;
     Score * controllerScore;
 
@@ -27,9 +25,7 @@ public:
     explicit Controller(QObject *parent = nullptr);
     ~Controller();
     void addZombie(const int& velocity , const int& lives);
-    void addMasterZombie(const int& velocity , const int& lives);
     void addSun();
-    void addOak();
 
 signals:
 

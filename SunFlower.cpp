@@ -6,7 +6,6 @@
 
 SunFlower::SunFlower(QTimer *sunflowerTimer, Score * sunflowerScore, QGraphicsItem *parent)
     :QObject() , QGraphicsPixmapItem(parent) , Plant() ,sunflowerTimer(sunflowerTimer) , sunflowerScore(sunflowerScore)
-    , timeIntervals(0)
 {
 
     //set picture
@@ -18,8 +17,6 @@ SunFlower::SunFlower(QTimer *sunflowerTimer, Score * sunflowerScore, QGraphicsIt
 }
 
 void SunFlower::createSun() {
-    // increment timeIntervals
-    ++timeIntervals;
 
     // create sun every 15000 miliSec
     if(timeIntervals % 300 == 0){
@@ -28,5 +25,6 @@ void SunFlower::createSun() {
         sun->setPos( x(), y());
     }
 
-
+    // increment timeIntervals
+    ++timeIntervals;
 }

@@ -3,6 +3,7 @@
 
 #include <QGraphicsTextItem>
 #include <QMediaPlayer>
+#include <QObject>
 
 
 class Score : public QGraphicsTextItem{
@@ -15,6 +16,12 @@ public:
     Score(QGraphicsItem * parent = 0);
     ~Score();
     void addToScore(int s);
+
+public slots:
+
+
+signals:
+    void signalChangeAmount(int playerScore);
 };
 
 #endif // SCORE_H

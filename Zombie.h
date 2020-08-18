@@ -8,7 +8,7 @@
 class Zombie : public QObject , public QGraphicsPixmapItem {
     Q_OBJECT
 
-protected:
+private:
     int miliSec;
     int lives;
     int pixPer50MiliSec;    // 20X = pixels per a second

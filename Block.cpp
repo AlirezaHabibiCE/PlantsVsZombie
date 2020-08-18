@@ -55,6 +55,11 @@ void Block::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
         }
     }
+    else if (plant != nullptr && shovel){
+        delete plant;
+        plant = nullptr;
+        emit isDeleted();
+    }
 }
 
 void Block::ShooterSellected()
@@ -95,5 +100,11 @@ void Block::UnSelect()
     shooter = false;
     oak = false;
     cherry = false;
+    shovel = false;
+}
+
+void Block::ShovelSellected()
+{
+    shovel = true;
 }
 

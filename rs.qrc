@@ -23,6 +23,29 @@
         <file>sunflowerSelectable.jpg</file>
         <file>sunflowerUnSelected.jpg</file>
         <file>sunflowerSelected.jpg</file>
+        <file>index.jpg</file>
+        <file>selectedShovle.png</file>
+        <file>shovel.png</file>
+        <file>oak7.png</file>
+        <file>oak6.png</file>
+        <file>oak4.png</file>
+        <file>oak5.png</file>
+        <file>oak3.png</file>
+        <file>oak2.png</file>
+        <file>oak1.png</file>
+        <file>mZombie4.png</file>
+        <file>mZombie3.png</file>
+        <file>mZombie2.png</file>
+        <file>mZombie1.png</file>
+        <file>MasterZombie.cpp</file>
+        <file>Shovel.cpp</file>
+        <file>Sun.cpp</file>
+        <file>Shooter.cpp</file>
+        <file>Zombie.cpp</file>
+        <file>cherry.png</file>
+        <file>exitButton.png</file>
+        <file>homePage.png</file>
+        <file>startButton.png</file>
     </qresource>
     <qresource prefix="/musics">
         <file>throwBullet.mp3</file>

@@ -19,7 +19,7 @@ signals:
 
 public slots:
     void slotPlayerScore(int playerScore);
-
+    void isPlaced();
 
 };
 

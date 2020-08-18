@@ -22,6 +22,7 @@ private:
     bool shooter;
     bool oak;
     bool cherry;
+    bool shovel;
     QTimer *bTimer;
     Score* blockScore;
 
@@ -32,6 +33,7 @@ public:
 signals:
     void signalIsPlacedToBoard();//for board
     void signalIsPlacedToScore(int price);//for score
+    void isDeleted();
 
 public slots:
     void ShooterSellected();
@@ -39,6 +41,7 @@ public slots:
     void OakSellected();
     void CherrySellected();
     void UnSelect();
+    void ShovelSellected();
 };
 
 #endif // BLOCK_H

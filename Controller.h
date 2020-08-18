@@ -15,6 +15,7 @@
 #include <OakBoard.h>
 #include <CherryBoard.h>
 #include <Plantboard.h>
+#include <Shovel.h>
 
 class Controller : public QObject
 {
@@ -22,6 +23,8 @@ class Controller : public QObject
     friend class View;
 private:
     int level;
+    int zombies;
+    Shovel* shovel;
     CherryBoard* cherryBoard;
     SunflowerBoard* sunflowerBoard;
     OakBoard* oakboard;
@@ -30,7 +33,7 @@ private:
     QTimer * cTimer;
     QGraphicsRectItem * holder;
     QList<Zombie *> zombieList;
-//    QList<MasterZombie*> masterZombieList;
+    QList<MasterZombie*> masterZombieList;
     QList<Sun *> sunList;
     QList<Block* > controllerBlocks;
     Score * controllerScore;
@@ -38,13 +41,18 @@ private:
 public:
     explicit Controller(QObject *parent = nullptr, int level=1);
     ~Controller();
-    void addZombie(const int& velocity , const int& lives);
-    void addMasterZombie(const int& velocity , const int& lives);
+    void addZombie(const int& velocity , const int& lives, int line);
+    void addMasterZombie(const int& velocity , const int& lives, int line);
     void addSun();
     void addOak();
+    void addCherry();
     int getRound();
+
 signals:
 
+public slots:
+    void addBoard();
+    void calculateZombie();
 };
 
 #endif // CONTROLLER_H

@@ -14,11 +14,12 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent * event);
 
 signals:
-    Oak* OakSellected();
+    void OakSellected();
     void UnselectOak();
 
 public slots:
     void slotPlayerScore(int playerScore);
+    void isPlaced();
 
 };
 

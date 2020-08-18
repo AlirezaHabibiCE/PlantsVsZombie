@@ -31,3 +31,9 @@ void CherryBoard::mousePressEvent(QGraphicsSceneMouseEvent *event)
         emit UnSelectCherry();
     }
 }
+
+void CherryBoard::isPlaced()
+{
+    isSelected = false;
+    emit UnSelectCherry();
+}

@@ -13,6 +13,12 @@ void OakBoard::slotPlayerScore(int playerScore)
     }
 }
 
+void OakBoard::isPlaced()
+{
+    isSelected = false;
+    emit UnselectOak();
+}
+
 void OakBoard::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     //first we check that plant is selectable

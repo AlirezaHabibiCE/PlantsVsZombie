@@ -9,7 +9,7 @@
 #include "Bullet.h"
 #include "Plant.h"
 
-class Shooter : public QObject , public QGraphicsPixmapItem, public Plant
+class Shooter : public QObject , public Plant
 
 {
     Q_OBJECT

@@ -10,6 +10,9 @@ public:
     explicit Oak(QObject *parent = nullptr);
 
 signals:
+    Oak* OakSellected();
+
+public slots:
 
 };
 

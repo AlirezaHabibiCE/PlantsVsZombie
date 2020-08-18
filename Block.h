@@ -8,12 +8,11 @@
 #include <Plantboard.h>
 #include <Cherry.h>
 #include <Shooter.h>
-#include <Oak.h>
 #include <SunFlower.h>
 #include <QGraphicsScene>
-#include <Controller.h>
+#include <Oak.h>
 
-class Block : public QObject , public QGraphicsRectItem, public Controller
+class Block : public QObject , public QGraphicsRectItem
 {
     Q_OBJECT
 
@@ -21,19 +20,25 @@ private:
     Plant* plant;
     bool sunflower;
     bool shooter;
-    bool Oak;
+    bool oak;
     bool cherry;
+    QTimer *bTimer;
+    Score* blockScore;
 
 public:
-    explicit Block(QGraphicsItem* parent);
-    void isPlaced();
+    explicit Block(QGraphicsItem* parent, Score* blockScore);
     void mousePressEvent(QGraphicsSceneMouseEvent * event);
 
 signals:
-    void signalIsPlaced();
+    void signalIsPlacedToBoard();//for board
+    void signalIsPlacedToScore(int price);//for score
 
 public slots:
+    Shooter* ShooterSellected();
+    SunFlower* SunFlowerSellected();
+    Oak* OakSellected();
     Cherry* CherrySellected();
+    void UnSelect();
 };
 
 #endif // BLOCK_H

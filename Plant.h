@@ -1,10 +1,13 @@
 #ifndef PLANT_H
 #define PLANT_H
 
+#include <QGraphicsPixmapItem>
 
-class Plant{
+class Plant
+:public QGraphicsPixmapItem
+{
 public:
-    Plant();
+    Plant(QGraphicsItem* parent);
 };
 
 #endif // PLANT_H

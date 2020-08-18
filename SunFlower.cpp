@@ -5,7 +5,7 @@
 
 
 SunFlower::SunFlower(QTimer *sunflowerTimer, Score * sunflowerScore, QGraphicsItem *parent)
-    :QObject() , QGraphicsPixmapItem(parent) , Plant() ,sunflowerTimer(sunflowerTimer) , sunflowerScore(sunflowerScore)
+    :QObject() , Plant(parent) ,sunflowerTimer(sunflowerTimer) , sunflowerScore(sunflowerScore)
 {
 
     //set picture

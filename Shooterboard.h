@@ -4,6 +4,7 @@
 #include <QObject>
 #include <Plantboard.h>
 #include <QGraphicsSceneMouseEvent>
+#include <Shooter.h>
 
 class ShooterBoard : public QObject, public PlantBoard
 {
@@ -13,10 +14,11 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent * event);
 
 signals:
-
+    Shooter* ShooterSellected();
+    void UnselectShooter();
 public slots:
     void slotPlayerScore(int playerScore);
-
+    void isPlaced();
 };
 
 #endif // SHOOTERBOARD_H

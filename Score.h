@@ -6,9 +6,10 @@
 #include <QObject>
 
 
-class Score : public QGraphicsTextItem{
+class Score : public QGraphicsTextItem
+{
     friend class Sun;
-
+    Q_OBJECT
 private:
     int playerScore;
     QMediaPlayer * scorePlayer;
@@ -18,10 +19,12 @@ public:
     void addToScore(int s);
 
 public slots:
+    void isPlaced(int price);
 
 
 signals:
     void signalChangeAmount(int playerScore);
+
 };
 
 #endif // SCORE_H

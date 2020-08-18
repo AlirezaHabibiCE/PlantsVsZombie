@@ -2,13 +2,12 @@
 #define SUNFLOWER_H
 
 #include <QObject>
-#include <QGraphicsPixmapItem>
 #include <QMediaPlayer>
 #include <QTimer>
 #include "Score.h"
 #include "Plant.h"
 
-class SunFlower : public QObject , public QGraphicsPixmapItem , public Plant
+class SunFlower : public QObject , public Plant
 {
     Q_OBJECT
 private:
@@ -23,7 +22,6 @@ signals:
 
 public slots:
     void createSun();
-
 };
 
 #endif // SUNFLOWER_H

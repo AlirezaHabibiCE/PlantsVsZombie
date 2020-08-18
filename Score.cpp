@@ -29,3 +29,9 @@ void Score::addToScore(int s)
     emit signalChangeAmount(playerScore);
 }
 
+void Score::isPlaced(int price)
+{
+    playerScore -= price;
+    emit signalChangeAmount(playerScore);
+}
+

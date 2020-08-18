@@ -15,7 +15,7 @@ public:
 
 signals:
         Cherry* CherrySelected();
-        bool UnSelectCherry(){return false;}
+        void UnSelectCherry();
 
 public slots:
     void slotPlayerScore(int playerScore);

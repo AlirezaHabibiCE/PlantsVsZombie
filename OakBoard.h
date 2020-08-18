@@ -4,6 +4,7 @@
 #include <QObject>
 #include <Plantboard.h>
 #include <QGraphicsSceneMouseEvent>
+#include <Oak.h>
 
 class OakBoard : public QObject ,public PlantBoard
 {
@@ -13,6 +14,8 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent * event);
 
 signals:
+    Oak* OakSellected();
+    void UnselectOak();
 
 public slots:
     void slotPlayerScore(int playerScore);

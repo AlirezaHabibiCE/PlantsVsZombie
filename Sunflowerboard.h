@@ -4,6 +4,7 @@
 #include <QObject>
 #include <Plantboard.h>
 #include <QGraphicsSceneMouseEvent>
+#include <SunFlower.h>
 
 class SunflowerBoard : public QObject, public PlantBoard
 {
@@ -13,10 +14,12 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent * event);
 
 signals:
+    SunFlower* sunflowerSellected();
+    void UnselectSunflower();
 
 public slots:
     void slotPlayerScore(int playerScore);
-
+    void isPlaced();
 };
 
 #endif // SUNFLOWERBOARD_H
